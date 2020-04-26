@@ -1,4 +1,4 @@
-FROM node:argon
+FROM node:lts-alpine3.9
 
 COPY [".", "/usr/src/"]
 

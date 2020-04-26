@@ -2,13 +2,16 @@ version: '2'
 
 services:
   app:
-    image: gvilarino/docker-testing
+    image: alete89/docker-example
     environment:
-      MONGO_URL: "mongodb://db/test"
+      MONGO_URL: "mongodb://mongo/test"
     depends_on:
-      - db
+      - mongo
     ports:
       - "3000:3000"
 
-  db:
-    image: mongo
+  mongo:
+    image: mongo:3.6
+    ports:
+      - "27017:27017"
+    command: mongod --noauth --bind_ip=0.0.0.0
