@@ -2,7 +2,8 @@ version: "3.7"
 
 services:
   app:
-    image: alete89/docker-example
+    build: . # buildear la imagen al momento de lanzar
+    # image: alete89/docker-example #usar una imagen local o remota
     environment:
       MONGO_URL: "mongodb://mongo/test"
     depends_on:
